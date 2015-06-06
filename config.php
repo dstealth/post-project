@@ -1,18 +1,21 @@
-<?php
+<?php header("Content-Type: text/html; charset=utf-8");
 // Название сервера (хоста)
-$host = "localhost";
+$db_host = "localhost";
+
 // Название БД
 $db_name = "dbPost";
+
 // Имя пользователя (логин)
-$user_name = "admin";
+$db_user_name = "root";
+
 // Пароль
-$user_password = "123";
+$db_password = "1";
 
 // Переменная с помощью которой происходит подсоединения к БД
-$connect = mysql_connect("$host","$user_name","$user_password");
+$connect = mysql_connect("$db_host","$db_user_name","$db_password") or die ("Невозможно подключится к БД: ". mysql_error());
 
 // Выбор данной БД
-mysql_select_db("$db_name", "$connect");
+mysql_select_db("$db_name") or die ("Невозможно выбрать БД: ". mysql_error());
 
 // Устанавливаю кодировку
 mysql_query("SET NAMES 'utf-8' ");
