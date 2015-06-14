@@ -4,6 +4,7 @@ $db_host = "localhost";
 
 // Название БД
 $db_name = "dbPost";
+//$db_name = "bank";
 
 // Имя пользователя (логин)
 $db_user_name = "root";
@@ -18,4 +19,5 @@ $connect = mysql_connect("$db_host","$db_user_name","$db_password") or die ("Н�
 mysql_select_db("$db_name") or die ("Невозможно выбрать БД: ". mysql_error());
 
 // Устанавливаю кодировку
-mysql_query("SET NAMES 'utf-8' ");
+mysql_query("SET NAMES 'utf8' ");
+
